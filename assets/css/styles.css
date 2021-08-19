@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "Shabnam";
+    src: url("../fonts/Shabnam/Shabnam.eot"); /* IE9*/
+    src: url("../fonts/Shabnam/Shabnam.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/Shabnam/Shabnam.woff2") format("woff2"), /* chrome、firefox */
+    url("../fonts/Shabnam/Shabnam.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/Shabnam/Shabnam.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
+body {
+    font-family: 'Shabnam' !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-menu {
+    border-bottom: 1px solid #eee;
+    margin: 0 0 20px 0;
+}
+
+.product-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
