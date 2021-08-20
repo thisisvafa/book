@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-2 text-center">
                 <form method="post" action="cart.php">
-                    <input type="hidden" name="bookisbn" value="<?php echo $book_ID;?>">
+                    <input type="hidden" name="book_id" value="<?php echo $book_ID;?>">
                     <input type="submit" value="افزودن به سبد خرید" name="cart" class="btn btn-primary">
                 </form>
             </div>

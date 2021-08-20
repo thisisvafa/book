@@ -1,7 +1,7 @@
 <?php
     session_start();
 //    require_once "./functions/admin.php";
-    $title = "Add new book";
+    $title = "افزودن محصول جدید";
     require_once "./template/header.php";
     require "../functions/database_functions.php";
     $conn = db_connect();

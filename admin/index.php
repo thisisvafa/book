@@ -3,137 +3,28 @@
 
     $title = "کتاب فروشی";
     require_once "./template/header.php";
+    require "../functions/database_functions.php";
+    $conn = db_connect();
+
+    $query = "SELECT count(*) FROM books";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $count = $row["count(*)"];
+    if(!$result){
+        echo "Can't add new data " . mysqli_error($conn);
+        exit;
+    }
 ?>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <h2>کتاب ها</h2>
-        <div class="table-responsive">
-            <table class="table table-striped table-sm">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">عنوان</th>
-                    <th scope="col">عنوان</th>
-                    <th scope="col">عنوان</th>
-                    <th scope="col">عنوان</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1,001</td>
-                    <td>بيانات</td>
-                    <td>عشوائية</td>
-                    <td>تثري</td>
-                    <td>الجدول</td>
-                </tr>
-                <tr>
-                    <td>1,002</td>
-                    <td>تثري</td>
-                    <td>مبهة</td>
-                    <td>تصميم</td>
-                    <td>تنسيق</td>
-                </tr>
-                <tr>
-                    <td>1,003</td>
-                    <td>عشوائية</td>
-                    <td>غنية</td>
-                    <td>قيمة</td>
-                    <td>مفيدة</td>
-                </tr>
-                <tr>
-                    <td>1,003</td>
-                    <td>معلومات</td>
-                    <td>تثري</td>
-                    <td>توضيحية</td>
-                    <td>عشوائية</td>
-                </tr>
-                <tr>
-                    <td>1,004</td>
-                    <td>الجدول</td>
-                    <td>بيانات</td>
-                    <td>تنسيق</td>
-                    <td>قيمة</td>
-                </tr>
-                <tr>
-                    <td>1,005</td>
-                    <td>قيمة</td>
-                    <td>مبهة</td>
-                    <td>الجدول</td>
-                    <td>تثري</td>
-                </tr>
-                <tr>
-                    <td>1,006</td>
-                    <td>قيمة</td>
-                    <td>توضيحية</td>
-                    <td>غنية</td>
-                    <td>عشوائية</td>
-                </tr>
-                <tr>
-                    <td>1,007</td>
-                    <td>تثري</td>
-                    <td>مفيدة</td>
-                    <td>معلومات</td>
-                    <td>مبهة</td>
-                </tr>
-                <tr>
-                    <td>1,008</td>
-                    <td>بيانات</td>
-                    <td>عشوائية</td>
-                    <td>تثري</td>
-                    <td>الجدول</td>
-                </tr>
-                <tr>
-                    <td>1,009</td>
-                    <td>تثري</td>
-                    <td>مبهة</td>
-                    <td>تصميم</td>
-                    <td>تنسيق</td>
-                </tr>
-                <tr>
-                    <td>1,010</td>
-                    <td>عشوائية</td>
-                    <td>غنية</td>
-                    <td>قيمة</td>
-                    <td>مفيدة</td>
-                </tr>
-                <tr>
-                    <td>1,011</td>
-                    <td>معلومات</td>
-                    <td>تثري</td>
-                    <td>توضيحية</td>
-                    <td>عشوائية</td>
-                </tr>
-                <tr>
-                    <td>1,012</td>
-                    <td>الجدول</td>
-                    <td>تثري</td>
-                    <td>تنسيق</td>
-                    <td>قيمة</td>
-                </tr>
-                <tr>
-                    <td>1,013</td>
-                    <td>قيمة</td>
-                    <td>مبهة</td>
-                    <td>الجدول</td>
-                    <td>تصميم</td>
-                </tr>
-                <tr>
-                    <td>1,014</td>
-                    <td>قيمة</td>
-                    <td>توضيحية</td>
-                    <td>غنية</td>
-                    <td>عشوائية</td>
-                </tr>
-                <tr>
-                    <td>1,015</td>
-                    <td>بيانات</td>
-                    <td>مفيدة</td>
-                    <td>معلومات</td>
-                    <td>الجدول</td>
-                </tr>
-                </tbody>
-            </table>
+    <main class="col-md-9 ms-sm-auto col-lg-10 my-4 px-md-4">
+
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header">تعداد کتاب های موجود</div>
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $count; ?></h5>
+            </div>
         </div>
+
     </main>
 
 <?php
